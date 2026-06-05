@@ -1,102 +1,149 @@
-# CodeSage AI 🌌 (AI-Powered Code Review Assistant)
+# CodeSage AI 🌌
 
-CodeSage AI is an enterprise-grade, hackathon-winning automated code review and security auditing platform. Developers can paste code snippets or import files directly from public GitHub repositories to get comprehensive analyses on security, bugs, performance efficiency, and maintainability.
+## AI-Powered Code Review & Security Auditing Platform
 
-Unlike standard chatbots, CodeSage AI features an **interactive, SaaS-style dashboard** with an animated code quality score gauge, color-coded severity issue cards, inline diff viewers, and a live "Apply Suggestion" button that modifies the code editor in real-time.
+CodeSage AI is an enterprise-grade automated code review and security auditing platform. Developers can paste code snippets or import files directly from public GitHub repositories to receive comprehensive analyses covering security vulnerabilities, bugs, performance bottlenecks, and maintainability concerns.
 
----
+The platform combines AI-powered code intelligence with an interactive SaaS-style dashboard featuring quality score visualization, issue categorization, diff comparison, and one-click fix application.
 
-## Key Features
+## 🚀 Key Features
 
-1. **⚡ Intelligent Code Review Engine**: Leverages the Gemini API (`gemini-2.5-flash`) to parse, detect, and categorize issues in JavaScript, Python, C++, C#, and Java.
-2. **🎯 Circular Quality Score Gauge**: Beautifully visualizes overall code quality with interactive letter grades (e.g. A+, B-) and radial loaders that automatically color-shift from red to emerald green.
-3. **🔍 Filterable Issue Metrics**: Sort findings instantly by severity level (HIGH, MEDIUM, LOW) or category rating (Bugs, Security, Performance, Maintainability).
-4. **🌳 GitHub Repository Explorer**: Paste a public repository URL to parse the directory tree hierarchy, traverse directories, and import files directly for analysis.
-5. **🛠️ Dynamic Code Refactoring**: Ask the AI questions or specify inline instructions (e.g. "make it thread-safe", "optimize this nested loop") and get automatic rewrites.
-6. **🚀 Inline Fix Application**: Review proposed fixes inside a side-by-side Diff Viewer and apply them directly back into the Monaco Code Editor with one click.
+### Intelligent Code Review Engine
 
----
+* AI-powered code analysis using Gemini AI
+* Supports JavaScript, Python, Java, C++, and C#
+* Detects bugs, security risks, performance issues, and maintainability concerns
 
-## Tech Stack
+### Code Quality Score
 
-| Component | Technology |
-| :--- | :--- |
-| **Frontend Framework** | React (Vite) |
-| **Styling Engine** | Tailwind CSS v4 |
-| **Code Editor Engine** | Monaco Editor (`@monaco-editor/react`) |
-| **Animation Library** | Framer Motion & Canvas Confetti |
-| **Backend Framework** | Node.js + Express |
-| **AI Integration** | Google Generative AI SDK (`@google/generative-ai`) |
+* Interactive circular score meter
+* Letter-grade evaluation system
+* Visual quality indicators
 
----
+### Severity-Based Issue Tracking
 
-## Installation & Local Run
+* HIGH, MEDIUM, and LOW severity classification
+* Category-based filtering
+* Actionable recommendations
 
-### Prerequisites
-- Node.js (v18 or higher recommended)
-- npm (v9 or higher)
+### GitHub Repository Explorer
 
-### 1. Clone/Navigate to the Directory
-Set this folder as your active workspace or navigate inside the root project directory:
-```bash
-cd codesage-ai
+* Import files from public GitHub repositories
+* Browse repository structure
+* Analyze files directly from source repositories
+
+### AI Refactoring Assistant
+
+* Generate optimized code
+* Improve readability and maintainability
+* Refactor based on custom instructions
+
+### Diff Viewer & One-Click Fixes
+
+* Side-by-side code comparison
+* Review AI-generated improvements
+* Apply fixes directly to the editor
+
+## 🛠️ Tech Stack
+
+| Category        | Technology        |
+| --------------- | ----------------- |
+| Frontend        | React (Vite)      |
+| Styling         | Tailwind CSS v4   |
+| Editor          | Monaco Editor     |
+| Animations      | Framer Motion     |
+| Backend         | Node.js + Express |
+| AI              | Google Gemini API |
+| Version Control | Git & GitHub      |
+
+## 📂 Project Structure
+
+```text
+codesage-ai/
+├── backend/
+├── frontend/
+├── package.json
+├── README.md
+└── docs/
 ```
 
-### 2. Install All Dependencies
-We have configured a concurrent root script to install dependencies for the root, frontend, and backend packages in a single command:
+## ⚙️ Installation & Setup
+
+### Prerequisites
+
+* Node.js (v18+)
+* npm (v9+)
+
+### Clone Repository
+
+```bash
+git clone https://github.com/Gangadhar0248/CodeSaga.git
+cd CodeSaga
+```
+
+### Install Dependencies
+
 ```bash
 npm run install:all
 ```
 
-### 3. Environment Setup
-Configure your Gemini API Key. You can do this in two ways:
-- **Option A (Recommended)**: Create a `.env` file in the `backend/` folder and insert your key:
-  ```env
-  PORT=5000
-  GEMINI_API_KEY=your_gemini_api_key_here
-  ```
-- **Option B (Browser Storage)**: Leave the `.env` blank and paste your key in the **Settings Modal** (gear icon) directly in the UI.
+### Configure Environment Variables
 
-### 4. Start the Application
-Run the local dev command which starts the Express server (port 5000) and Vite development client (port 3000) simultaneously:
+Create:
+
+backend/.env
+
+```env
+PORT=5000
+GEMINI_API_KEY=your_api_key
+```
+
+### Run Development Server
+
 ```bash
 npm run dev
 ```
 
-Visit [http://localhost:3000](http://localhost:3000) in your browser.
+Frontend:
+http://localhost:3000
 
----
+Backend:
+http://localhost:5000
 
-## File Architecture
+## 🎥 Demo Video
 
-```
-codesage-ai/
-├── package.json          # Root scripts and workspace runner
-├── backend/              # Express backend server
-│   ├── package.json
-│   ├── server.js         # API handlers (Gemini + GitHub API)
-│   └── .env              # Backend configuration keys
-└── frontend/             # React web application
-    ├── package.json
-    ├── vite.config.js    # Vite & proxy configuration
-    ├── index.html        # Entry viewport, fonts imports
-    └── src/
-        ├── main.jsx      # React mounting file
-        ├── App.jsx       # Main Dashboard layout & state orchestrator
-        ├── index.css     # Tailwind v4 import + custom animations & styling utilities
-        ├── utils/
-        │   └── api.js    # API routing utility
-        └── components/
-            ├── CodeEditor.jsx   # Monaco code editor wrapper
-            ├── ScoreMeter.jsx   # SVG circular scoring dashboard indicator
-            ├── DiffViewer.jsx   # Side-by-side comparison screen
-            └── IssueCard.jsx    # Collapsible issue reporter card with refactor targets
-```
+https://drive.google.com/file/d/1BwsE8GX8YUTOZQAvoDuDi-b62Kdi5qkx/view
 
----
+## 📸 Screenshots
 
-## Innovation & Judging Criteria Highlights
+Add screenshots of:
 
-- **Real-World Problem Solving**: Reduces developer friction in code review by pinpointing exact line numbers, explanations, and offering automated corrections.
-- **Enterprise-Grade UI**: The interface has been crafted with a rich, dark-mode styling utilizing glassmorphism cards, glowing border rings, responsive side-by-side diff viewers, and satisfying celebrations upon achieving high quality code scores.
-- **No Chatbot Clones**: Stand out in the hackathon by submitting a functional business productivity SaaS tool instead of generic chatbot panels.
+* Dashboard
+* Code Editor
+* Issue Analysis Panel
+* Diff Viewer
+* GitHub Repository Explorer
+
+## 💡 Innovation Highlights
+
+* AI-powered code review automation
+* Security vulnerability detection
+* GitHub repository integration
+* Interactive SaaS-style dashboard
+* Real-time code improvement suggestions
+* Enterprise-grade user experience
+
+## 🎯 Hackathon Relevance
+
+CodeSage AI addresses a real-world software engineering challenge by reducing manual code review effort, improving code quality, and helping developers identify issues faster through AI-powered analysis.
+
+## 👨‍💻 Author
+
+Sagam Gangadhar Reddy
+
+GitHub:
+https://github.com/Gangadhar0248
+
+## 📄 License
+
+MIT License
